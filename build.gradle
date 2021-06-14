@@ -1,0 +1,12 @@
+plugins {
+  id 'watheia.base-conventions'
+}
+
+tasks.register('buildSite', Exec) {
+  mustRunAfter clean
+  executable = file('build-site.sh')
+}
+
+build {
+  dependsOn buildSite
+}

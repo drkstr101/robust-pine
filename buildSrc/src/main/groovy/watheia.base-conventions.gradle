@@ -1,0 +1,19 @@
+plugins {
+  id 'base'
+  id 'project-report'
+  id 'distribution'
+}
+
+assemble {
+  dependsOn projectReport
+}
+
+subprojects.each { Project p ->
+  tasks.assemble.dependsOn("${p.path}:assemble")
+  tasks.check.dependsOn("${p.path}:check")
+  tasks.clean.dependsOn("${p.path}:clean")
+}
+
+[distZip, distTar, assembleDist, installDist].each { Task t -> t.mustRunAfter(clean) }
+
+defaultTasks 'assemble'

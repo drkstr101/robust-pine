@@ -1,0 +1,36 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "assets/*": ["src/assets/*", "apps/pwa/src/assets/*"],
+      "@waweb/components": ["apps/pwa/src/components/index.ts"],
+      "@waweb/molecules": ["apps/pwa/src/components/molecules/index.ts"],
+      "@waweb/organisms": ["apps/pwa/src/components/organisms/index.ts"],
+      "@waweb/atoms": ["apps/pwa/src/components/atoms/index.ts"],
+      "views/*": ["src/views/*", "apps/pwa/src/views/*"],
+      "layouts/*": ["src/layouts/*", "apps/pwa/src/layouts/*"],
+      "content/*": ["src/content/*", "apps/pwa/src/content/*"],
+      "WithLayout": ["src/WithLayout", "apps/pwa/src/WithLayout"],
+      "theme": ["src/theme", "apps/pwa/src/theme"],
+      "@waweb/utils": ["libs/utils/src/index.ts"],
+      "@waweb/content": ["libs/content/src/index.ts"],
+      "@waweb/blog.data": ["libs/blog/data/src/index.ts"],
+      "@waweb/blog.ui": ["libs/blog/ui/src/index.ts"],
+      "@waweb/ctx.data": ["libs/ctx/data/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

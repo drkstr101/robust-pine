@@ -1,0 +1,206 @@
+{
+  "version": 2,
+  "cli": {
+    "defaultCollection": "@nrwl/gatsby"
+  },
+  "defaultProject": "pwa",
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nrwl/gatsby": {
+      "application": {
+        "style": "scss"
+      }
+    }
+  },
+  "projects": {
+    "api": {
+      "root": "apps/api",
+      "sourceRoot": "apps/api/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/api",
+            "main": "apps/api/src/main.ts",
+            "tsConfig": "apps/api/tsconfig.app.json",
+            "assets": ["apps/api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/api/src/environments/environment.ts",
+                  "with": "apps/api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "api:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/api/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/api"],
+          "options": {
+            "jestConfig": "apps/api/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "utils": {
+      "root": "libs/utils",
+      "sourceRoot": "libs/utils/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/utils",
+            "tsConfig": "libs/utils/tsconfig.lib.json",
+            "packageJson": "libs/utils/package.json",
+            "main": "libs/utils/src/index.ts",
+            "assets": ["libs/utils/*.md"]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/utils/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/utils"],
+          "options": {
+            "jestConfig": "libs/utils/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "e2e": {
+      "root": "apps/e2e",
+      "sourceRoot": "apps/e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/e2e/cypress.json",
+            "tsConfig": "apps/e2e/tsconfig.e2e.json",
+            "devServerTarget": "pwa:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "pwa:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "pwa": {
+      "root": "apps/pwa",
+      "sourceRoot": "apps/pwa/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/gatsby:build",
+          "options": {
+            "outputPath": "apps/pwa/public",
+            "uglify": true,
+            "color": true,
+            "profile": false
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/gatsby:server",
+          "options": {
+            "buildTarget": "pwa:build",
+            "proxyConfig": "apps/pwa/proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "pwa:build:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/pwa/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/pwa"],
+          "options": {
+            "jestConfig": "apps/pwa/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ctx-data": {
+      "root": "libs/ctx/data",
+      "sourceRoot": "libs/ctx/data/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/ctx/data",
+            "tsConfig": "libs/ctx/data/tsconfig.lib.json",
+            "packageJson": "libs/ctx/data/package.json",
+            "main": "libs/ctx/data/src/index.ts",
+            "assets": ["libs/ctx/data/*.md"]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/ctx/data/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ctx/data"],
+          "options": {
+            "jestConfig": "libs/ctx/data/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  }
+}

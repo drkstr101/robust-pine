@@ -1,0 +1,11 @@
+# Add files here to ignore them from prettier formatting
+
+build
+bin
+dist
+coverage
+node_modules
+public
+.cache
+
+.yarn
