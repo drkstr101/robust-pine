@@ -11,6 +11,6 @@ npx @stackbit/datocms-pull --ssg gatsby --datocms-access-token $DATOCMS_ACCESS_T
 
 
 # build site
-npm run build
+yarn build
 
 echo "stackbit-build.sh: finished build"
