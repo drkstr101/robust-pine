@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/drkstr101/robust-pine)
+
 # ✨ robust-pine ✨
 
 <img src="https://themes.stackbit.com/images/diy-demo-1024x768.png" width="600">
