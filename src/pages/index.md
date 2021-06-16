@@ -48,6 +48,7 @@ sections:
   - background_image_repeat: no-repeat
     background_image_position: center center
     type: hero_section
+    background_image: 'https://www.datocms-assets.com/49813/1623818056-banner-bg.svg'
     background_image_size: cover
     background_color: primary
     padding_bottom: large
@@ -208,7 +209,7 @@ sections:
         media_position: right
         type: feature
         media_width: fifty
-        image_alt: Feature 1 placeholder image
+        image_alt: Feature 1 graphic
         actions:
           - type: action
             icon_position: right
@@ -220,12 +221,11 @@ sections:
             label: Learn More
             url: /style-guide
         content: >-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl
-          ligula, cursus id molestie vel, maximus aliquet risus. Vivamus in nibh
-          fringilla, fringilla.
-        image: 'https://www.datocms-assets.com/49813/1623787047-feature-1.png'
-        title: The Big Title For the Feature
-        subtitle: 'In fermentum odio et tortor laoreet, sed interdum augue ornare. '
+          Our open DevOps platform is a single application for unparalleled
+          collaboration, visibility, and development velocity.
+        image: 'https://www.datocms-assets.com/49813/1623814546-hero-enterprise.svg'
+        title: Cloud-Native DevOps
+        subtitle: Deliver features faster
       - align: left
         media_position: left
         type: feature
@@ -242,11 +242,12 @@ sections:
             label: Learn More
             url: /style-guide
         content: >-
-          Ac felis donec et odio pellentesque. Sagittis vitae et leo duis ut
-          diam quam nulla. Ullamcorper a lacus vestibulum sed arcu non odio
-          euismod lacinia.
+          Let your components drive web application delivery at global scale.
+          Enjoy world-class performance, security and support every step of the
+          way.
         image: 'https://www.datocms-assets.com/49813/1623787047-feature-2.png'
-        title: The Big Title For the Feature
+        title: Micro Frontends
+        subtitle: Increase customer focus
       - align: left
         media_position: right
         type: feature
@@ -267,10 +268,10 @@ sections:
           diam quam nulla. Ullamcorper a lacus vestibulum sed arcu non odio
           euismod lacinia.
         image: 'https://www.datocms-assets.com/49813/1623787047-feature-3.png'
-        title: The Big Title For the Feature
-        subtitle: 'Sed sed commodo turpis, eget rutrum dui.'
-    title: Features Section
-    subtitle: Features Section Example
+        title: Test Automation
+        subtitle: Do more with less
+    title: Capabilities
+    subtitle: Here's a taste of what we have to offer
   - type: features_section
     background_image_repeat: no-repeat
     background_image_size: cover

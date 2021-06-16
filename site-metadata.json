@@ -84,7 +84,7 @@
         "has_primary_nav": true,
         "has_secondary_nav": true,
         "logo_alt": "Watheia Labs",
-        "logo": "https://www.datocms-assets.com/49813/1623787573-logo-banner-alt.png",
+        "logo": "https://www.datocms-assets.com/49813/1623881534-logo-banner.svg",
         "title": "Watheia"
     },
     "footer": {
@@ -221,9 +221,9 @@
         ],
         "primary_nav_title": "Company",
         "logo_alt": "Watheia Labs",
-        "logo": "https://www.datocms-assets.com/49813/1623787573-logo-banner-alt.png"
+        "logo": "https://www.datocms-assets.com/49813/1623881534-logo-banner.svg"
     },
-    "mode": "dark",
+    "mode": "light",
     "base_font": "serif",
     "style": "classic",
     "palette": "gray",

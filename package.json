@@ -5,13 +5,14 @@
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
-    "start": "npm run develop",
+    "start": "yarn develop",
     "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve",
     "pull": "npx @stackbit/datocms-pull --ssg gatsby --datocms-access-token $DATOCMS_ACCESS_TOKEN"
   },
   "dependencies": {
     "@stackbit/gatsby-plugin-menus": "0.0.4",
+    "@watheia/kit.theme.theme-provider": "^0.0.2",
     "babel-runtime": "6.26.0",
     "chokidar": "3.5.2",
     "classnames": "2.3.1",
