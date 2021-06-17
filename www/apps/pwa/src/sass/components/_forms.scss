@@ -1,11 +1,13 @@
 /**
- * Form fields
+ * Forms
  */
 label {
   display: block;
+  color: inherit;
+  font-size: 0.88889em;
   font-weight: 700;
   line-height: 1.5;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.3em;
 }
 
 input[type="text"],
@@ -17,18 +19,18 @@ input[type="search"],
 input[type="url"],
 select,
 textarea {
-  background: 0;
-  border: 1px solid $color-border;
-  border-radius: 3px;
+  background: $color-input-bg;
+  border: 1px solid $color-input-border;
+  border-radius: 0;
   box-shadow: none;
   box-sizing: border-box;
-  color: $color-text;
+  color: $color-input-text;
   display: block;
   font-size: 16px;
   font-weight: normal;
   line-height: 1.5;
   max-width: 100%;
-  padding: 0.625em 0.625em;
+  padding: 0.6875em;
   width: 100%;
 
   &:focus {
@@ -36,16 +38,9 @@ textarea {
   }
 }
 
-.form-group {
-  margin-bottom: 1.125rem;
-}
-
-.form-submit {
-  margin-top: 1.875rem;
-}
-
-.form-select-wrap {
-  font-size: 1em;
+.form-select {
+  color: inherit;
+  font-size: 16px;
   position: relative;
 
   select {
@@ -71,12 +66,12 @@ textarea {
   }
 
   &:before {
-    border-top-color: $color-text;
+    border-top-color: currentColor;
     margin-top: 0.125em;
   }
 
   &:after {
-    border-bottom-color: $color-text;
+    border-bottom-color: currentColor;
     margin-top: -0.75em;
   }
 }
@@ -93,6 +88,42 @@ textarea {
   }
 
   label {
-    font-weight: normal;
+    font-weight: 400;
+  }
+}
+
+.form-inline {
+  label {
+    @include sr-only();
+  }
+}
+
+.style-classic {
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="search"],
+  input[type="url"],
+  select,
+  textarea {
+    background: $color-classic-input-bg;
+    border-radius: 6px;
+  }
+}
+
+.style-bold {
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="search"],
+  input[type="url"],
+  select,
+  textarea {
+    background: $color-bold-input-bg;
+    border-color: transparent;
   }
 }

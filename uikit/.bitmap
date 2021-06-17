@@ -15,7 +15,7 @@
     },
     "ctx/waweb/data": {
         "scope": "",
-        "version": "0.1.0",
+        "version": "",
         "mainFile": "index.ts",
         "rootDir": "src/ctx/waweb/data"
     },
@@ -54,6 +54,12 @@
         "version": "0.1.0",
         "mainFile": "index.ts",
         "rootDir": "src/elements/link"
+    },
+    "layout/ui/copyright": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/layout/ui/copyright"
     },
     "marketing/comment-carousel": {
         "scope": "waweb.uikit",
@@ -188,8 +194,8 @@
         "rootDir": "src/theme/brands"
     },
     "theme/theme-provider": {
-        "scope": "",
-        "version": "0.1.0",
+        "scope": "waweb.uikit",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "src/theme/theme-provider"
     },

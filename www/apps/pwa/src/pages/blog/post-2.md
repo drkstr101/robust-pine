@@ -1,81 +1,90 @@
 ---
+seo:
+  extra:
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: article
+      keyName: property
+      name: 'og:type'
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: 'Non Minor, Inquit, Voluptas Percipitur Ex Vilissimis'
+      keyName: property
+      name: 'og:title'
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: Quae diligentissime contra Aristonem dicuntur a Chryippo
+      keyName: property
+      name: 'og:description'
+    - type: stackbit_page_meta_extra
+      relativeUrl: true
+      value: images/classic/post-2.png
+      keyName: property
+      name: 'og:image'
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: summary_large_image
+      keyName: name
+      name: 'twitter:card'
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: 'Non Minor, Inquit, Voluptas Percipitur Ex Vilissimis'
+      keyName: name
+      name: 'twitter:title'
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: Quae diligentissime contra Aristonem dicuntur a Chryippo
+      keyName: name
+      name: 'twitter:description'
+    - type: stackbit_page_meta_extra
+      relativeUrl: true
+      value: images/classic/post-2.png
+      keyName: name
+      name: 'twitter:image'
+  type: stackbit_page_meta
+  title: 'Non Minor, Inquit, Voluptas Percipitur Ex Vilissimis'
+  description: Quae diligentissime contra Aristonem dicuntur a Chryippo
 stackbit_url_path: /blog/post-2
 template: post
-seo:
-  type: stackbit_page_meta
-  description: Quae diligentissime contra Aristonem dicuntur a Chryippo
-  extra:
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "og:type"
-      keyName: property
-      value: article
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "og:title"
-      keyName: property
-      value: "Non Minor, Inquit, Voluptas Percipitur Ex Vilissimis"
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "og:description"
-      keyName: property
-      value: Quae diligentissime contra Aristonem dicuntur a Chryippo
-    - relativeUrl: true
-      type: stackbit_page_meta_extra
-      name: "og:image"
-      keyName: property
-      value: images/2.png
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "twitter:card"
-      keyName: name
-      value: summary_large_image
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "twitter:title"
-      keyName: name
-      value: "Non Minor, Inquit, Voluptas Percipitur Ex Vilissimis"
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "twitter:description"
-      keyName: name
-      value: Quae diligentissime contra Aristonem dicuntur a Chryippo
-    - relativeUrl: true
-      type: stackbit_page_meta_extra
-      name: "twitter:image"
-      keyName: name
-      value: images/2.png
-  title: "Non Minor, Inquit, Voluptas Percipitur Ex Vilissimis"
+image: 'https://www.datocms-assets.com/49813/1623787048-post-2.png'
+image_alt: Post 2 placeholder image
+image_position: left
+thumb_image_alt: Post 2 placeholder image
+thumb_image: 'https://www.datocms-assets.com/49813/1623787048-post-2.png'
 excerpt: >-
   Quae diligentissime contra Aristonem dicuntur a Chryippo. Videamus igitur
   sententias eorum, tum ad verba redeamus. Levatio igitur vitiorum magna.
-image_alt: Post 2 placeholder image
-date: "2020-05-25"
-image: "https://www.datocms-assets.com/49645/1623441764-2.png"
-author:
-  type: person
-  bio: >-
-    Aliquam vestibulum morbi blandit cursus risus at ultrices mi. Massa placerat
-    duis ultricies lacus. Amet justo donec enim diam.
-  last_name: Tone
-  photo: "https://www.datocms-assets.com/49645/1623441766-miles-tone.jpg"
-  photo_alt: Miles Tone
-  first_name: Miles
-  link: blog/author/miles-tone
-  id: miles-tone
 tags:
-  - Jamstack
-  - Netlify
+  - type: tag
+    link: blog/tag/jamstack
+    title: JAMstack
+    id: jamstack
+  - type: tag
+    link: blog/tag/netlify
+    title: Netlify
+    id: netlify
+date: '2020-05-25'
+author:
+  photo_alt: Hilary Ouse
+  type: person
+  photo: 'https://www.datocms-assets.com/49813/1623787050-hugh-saturation.jpg'
+  first_name: Patrick
+  last_name: Stevenson
+  id: pstevenson
+  link: blog/author/pstevenson
 categories:
-  - link: blog/category/news
+  - type: category
     title: News
-    type: category
+    link: blog/category/news
     id: news
-  - link: case-studies
-    title: Case Studies
-    type: category
-    id: case_study
-title: "Non Minor, Inquit, Voluptas Percipitur Ex Vilissimis"
+  - type: category
+    title: General
+    link: blog/category/general
+    id: general
+subtitle: >-
+  Idemque diviserunt naturam hominis in animum et corpus. Si enim ad populum me
+  vocas, eum.
+title: 'Non Minor, Inquit, Voluptas Percipitur Ex Vilissimis'
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Negat esse eam, inquit, propter se expetendam. Nam de isto magna dissensio est. Nullum inveniri verbum potest quod magis idem declaret Latine, quod Graece, quam declarat voluptas. Idemne potest esse dies saepius, qui semel fuit? Non est ista, inquam, Piso, magna dissensio. Ita multo sanguine profuso in laetitia et in victoria est mortuus. Quasi vero, inquit, perpetua oratio rhetorum solum, non etiam philosophorum sit. Duo Reges: constructio interrete.

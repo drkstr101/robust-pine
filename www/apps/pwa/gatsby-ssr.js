@@ -5,7 +5,7 @@
  */
 
 const React = require("react")
-const withPrefix = require("../../libs/utils/src//lib/withPrefix").default
+const withPrefix = require("@waweb/utils").withPrefix
 
 exports.onRenderBody = function ({ setHeadComponents, setPostBodyComponents }) {
   setHeadComponents([])

@@ -2,20 +2,32 @@
  * Base Styles
  */
 html {
-  font-family: $font-family-base;
-  font-size: 100%;
+  font-size: 112.5%;
 }
 
 body {
-  background-color: $color-bg;
-  color: $color-text;
-  line-height: 1.625;
+  background-color: $color-body-bg;
+  color: $color-body-text;
+  line-height: 1.66667;
   text-rendering: optimizeLegibility;
-  @include fontSmooth();
+  @include font-smooth();
+}
+
+@each $style in map-keys($theme-styles) {
+  $style-suffix: "#{$style}";
+  $fonts: map-deep-get($theme-styles, $style, "fonts");
+  @each $font, $stack in $fonts {
+    $font-suffix: "#{$font}";
+    .style-#{$style-suffix} {
+      &.font-#{$font-suffix} {
+        font-family: $stack;
+      }
+    }
+  }
 }
 
 a {
-  color: $color-link;
+  color: inherit;
   text-decoration: underline;
 
   &:hover {
@@ -29,10 +41,9 @@ h3,
 h4,
 h5,
 h6 {
-  color: $color-heading;
   font-weight: 700;
   line-height: 1.2;
-  margin: 2.25rem 0 1.125rem;
+  margin: 1.25em 0 0.5em;
 
   &:first-child {
     margin-top: 0;
@@ -45,51 +56,86 @@ h6 {
 }
 
 h1 {
-  font-size: 2.625em;
+  font-size: 2.66667em;
 }
 
 h2 {
-  font-size: 2.25em;
+  font-size: 2.22222em;
 }
 
 h3 {
-  font-size: 1.875em;
+  font-size: 1.66667em;
 }
 
 h4 {
-  font-size: 1.5em;
+  font-size: 1.33333em;
 }
 
 h5 {
-  font-size: 1.3125em;
+  font-size: 1.11111em;
 }
 
 h6 {
-  font-size: 1.125em;
+  font-size: 1em;
+}
+
+mark,
+ins {
+  background-color: $color-highlight-bg;
+  color: $color-highlight-text;
+  padding: 0.125em 0.25em;
+  text-decoration: none;
 }
 
 blockquote {
-  border-left: 3px solid $color-blockquote-border;
-  color: $color-blockquote;
-  font-size: 1.25em;
-  font-style: italic;
-  line-height: 1.5;
-  margin: 2.25rem 0;
-  padding: 0 1.2em;
+  margin: 0 0 1em;
+  padding: 0 0 0 2.22222em;
+  position: relative;
 
-  &:first-child {
-    margin-top: 0;
+  &:before {
+    color: currentColor;
+    content: "\201C";
+    font-size: 2.66667em;
+    left: 0;
+    line-height: 1;
+    position: absolute;
+    top: 0;
   }
 }
 
-p {
-  margin: 0 0 1.5rem;
+pre {
+  border: 1px solid $color-code-border;
+  font-size: 0.88889em;
+  line-height: 1.5;
+  margin: 0 0 1em;
+  overflow: auto;
+  padding: 1.5em;
+  white-space: pre;
+}
+
+.style-classic {
+  pre {
+    background-color: $color-code-bg;
+    border-radius: 6px;
+  }
+}
+
+.style-bold {
+  pre {
+    background-color: $color-bold-code-bg;
+    border-width: 2px;
+  }
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 1em;
 }
 
 ul,
 ol {
-  margin: 0 0 1.5rem;
-  padding: 0 0 0 1.25rem;
+  padding: 0 0 0 1.5em;
 }
 
 ul {
@@ -105,14 +151,28 @@ li > ol {
   margin-bottom: 0;
 }
 
+dt {
+  font-weight: 700;
+}
+dd {
+  margin-left: 0;
+}
+
 hr {
-  background-color: $color-border;
+  background-color: $color-hr-border;
   border: 0;
+  color: inherit;
   height: 1px;
-  margin: 2.25rem 0;
+  margin: 1.11111em 0;
 
   &:first-child {
     margin-top: 0;
+  }
+}
+
+.style-bold {
+  hr {
+    height: 2px;
   }
 }
 
@@ -129,32 +189,38 @@ img {
   max-width: 100%;
 }
 
+.style-classic {
+  .site-content {
+    img {
+      border-radius: 6px;
+    }
+  }
+}
+
 figure {
-  margin: 0;
+  margin: 0 0 1em;
+}
+
+figcaption {
+  color: $color-meta;
+  font-size: 0.88889em;
+  text-align: left;
 }
 
 @include media-breakpoint-down(sm) {
   h1 {
-    font-size: 2.25em;
+    font-size: 2.22222em;
   }
 
   h2 {
-    font-size: 1.875em;
+    font-size: 1.88889em;
   }
 
   h3 {
-    font-size: 1.5em;
+    font-size: 1.55556em;
   }
 
-  h4 {
-    font-size: 1.3125em;
-  }
-
-  h5 {
-    font-size: 1.125em;
-  }
-
-  h6 {
-    font-size: 1em;
+  html {
+    font-size: 100%;
   }
 }

@@ -1,125 +1,213 @@
 /**
- * Content Sections
+ * Sections
  */
 .section {
-  margin-bottom: 3.75rem;
+  &.has-border {
+    border-bottom: 1px solid $color-sect-border;
 
-  &:first-child {
-    padding-top: 3.75rem;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-    padding-bottom: 3.75em;
-  }
-
-  .container + .container {
-    margin-top: 2.25rem;
-  }
-}
-
-.bg-blue,
-.bg-gray,
-.has-bg {
-  padding-bottom: 3.75em;
-  padding-top: 3.75em;
-}
-
-.bg-blue {
-  background-color: $color-inverse-bg;
-}
-
-.bg-gray {
-  background-color: $color-bg-alt;
-}
-
-.section__media,
-.section__body {
-  position: relative;
-}
-
-.section__actions {
-  a {
-    &:not(.btn) {
-      font-weight: 700;
+    &:last-child {
+      border-bottom: 0;
     }
   }
-}
 
-.hero,
-.section--features {
-  .cell {
-    max-width: $width-md;
-
-    &:only-child {
-      flex: 0 0 100%;
-    }
-  }
-}
-
-.hero {
-  &:first-child {
-    &:not(.section--padding) {
-      margin-bottom: 2.25rem;
-      padding-bottom: 0;
-    }
-  }
-}
-
-.section--features {
-  .flex {
-    margin-bottom: 3.75rem;
-  }
-}
-
-.section--team,
-.section--posts {
-  .cell {
-    margin-bottom: 1.5rem;
-    max-width: $width-sm;
-  }
-}
-
-.section--team {
-  .card__media {
-    margin-top: auto;
-    padding-top: 100%;
+  .container {
     position: relative;
+  }
 
-    img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
+  &.bg-none {
+    background: none;
+  }
+}
+
+.hero__media,
+.item__media {
+  img {
+    display: block;
+  }
+}
+
+.section__subtitle {
+  font-size: 0.88889em;
+  margin-bottom: 0.25em;
+}
+
+// Hero section
+.hero__title {
+  margin-bottom: 0.25em;
+}
+
+.hero__subtitle {
+  font-size: 1.22222em;
+}
+
+.hero__copy {
+  &:not(:first-child) {
+    margin-top: 1.11111em;
+  }
+}
+
+.hero__actions {
+  &:not(:first-child) {
+    margin-top: 2em;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .hero__body {
+    font-size: 1.11111rem;
+  }
+}
+
+// Features section
+.feature__subtitle {
+  font-size: 1.33333em;
+  line-height: 1.25;
+}
+
+.feature__actions {
+  margin-top: 1.66667em;
+}
+
+// Grid section
+.item__subtitle {
+  font-size: 0.88889em;
+}
+
+.item__actions {
+  margin-top: 1.66667em;
+}
+
+// Blog section
+.item__meta,
+.item__byline {
+  color: $color-meta;
+  font-size: 0.77778em;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
 
-.section--cta {
-  .bg-blue,
-  .bg-gray {
-    border-radius: 3px;
+.item__byline {
+  margin-top: 1.66667em;
+}
+
+.blog-feed {
+  .item__title {
+    margin-bottom: 0.83333em;
+  }
+}
+
+.item__meta-sep {
+  font-weight: 700;
+  margin: 0 3px;
+}
+
+// CTA section
+@include media-breakpoint-up(lg) {
+  .cta__copy,
+  .cta__actions {
+    font-size: 1.11111em;
   }
 }
 
 @include media-breakpoint-up(md) {
-  .section__media {
-    &--right {
-      order: 1;
+  .cta__actions {
+    &.justify-md-center {
+      .btn {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+      }
     }
   }
 }
 
-@include media-breakpoint-down(md) {
-  .section__media {
-    margin-bottom: 1.5rem;
+.style-classic {
+  .section__title {
+    &:after {
+      background-color: $color-classic-sect-underline;
+      content: "";
+      display: block;
+      height: 2px;
+      margin: 1.66667rem 0 0;
+      width: 5rem;
+    }
   }
 
-  .section--team,
-  .section--posts {
-    .flex {
-      justify-content: center;
+  .text-center {
+    .section__title {
+      &:after {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  .text-right {
+    .section__title {
+      &:after {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+.style-bold {
+  .section {
+    &.has-border {
+      border-bottom-width: 2px;
+    }
+  }
+}
+
+.bg-primary {
+  background: $color-primary-sect-bg;
+}
+
+.bg-secondary {
+  background: $color-secondary-sect-bg;
+}
+
+@each $style in map-keys($theme-styles) {
+  $style-suffix: "#{$style}";
+  $colors: map-deep-get($theme-styles, $style, "colors");
+  @each $color, $value in $colors {
+    $color-suffix: "#{$color}";
+
+    .style-#{$style-suffix} {
+      &.palette-#{$color-suffix} {
+        .bg-primary {
+          background-color: $value;
+        }
+      }
+    }
+  }
+}
+
+.style-classic {
+  $classic-colors: map-deep-get($theme-styles, "classic", "colors");
+  @each $color, $value in $classic-colors {
+    $color-suffix: "#{$color}";
+
+    &.palette-#{$color-suffix} {
+      .section__title {
+        &:after {
+          background-color: $value;
+        }
+      }
+    }
+  }
+
+  .bg-primary {
+    .section__title {
+      &:after {
+        background-color: currentColor;
+      }
     }
   }
 }

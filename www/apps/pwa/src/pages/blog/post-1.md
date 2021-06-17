@@ -1,77 +1,81 @@
 ---
+seo:
+  extra:
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: article
+      keyName: property
+      name: 'og:type'
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: Utrum Igitur Tibi Litteram Videor An Totas Paginas
+      keyName: property
+      name: 'og:title'
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+      keyName: property
+      name: 'og:description'
+    - type: stackbit_page_meta_extra
+      relativeUrl: true
+      value: images/classic/post-1.png
+      keyName: property
+      name: 'og:image'
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: summary_large_image
+      keyName: name
+      name: 'twitter:card'
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: Utrum Igitur Tibi Litteram Videor An Totas Paginas
+      keyName: name
+      name: 'twitter:title'
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+      keyName: name
+      name: 'twitter:description'
+    - type: stackbit_page_meta_extra
+      relativeUrl: true
+      value: images/classic/post-1.png
+      keyName: name
+      name: 'twitter:image'
+  type: stackbit_page_meta
+  title: Utrum Igitur Tibi Litteram Videor An Totas Paginas
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
 stackbit_url_path: /blog/post-1
 template: post
-seo:
-  type: stackbit_page_meta
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-  extra:
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "og:type"
-      keyName: property
-      value: article
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "og:title"
-      keyName: property
-      value: Utrum Igitur Tibi Litteram Videor An Totas Paginas
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "og:description"
-      keyName: property
-      value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-    - relativeUrl: true
-      type: stackbit_page_meta_extra
-      name: "og:image"
-      keyName: property
-      value: images/1.png
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "twitter:card"
-      keyName: name
-      value: summary_large_image
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "twitter:title"
-      keyName: name
-      value: Utrum Igitur Tibi Litteram Videor An Totas Paginas
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "twitter:description"
-      keyName: name
-      value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-    - relativeUrl: true
-      type: stackbit_page_meta_extra
-      name: "twitter:image"
-      keyName: name
-      value: images/1.png
-  title: Utrum Igitur Tibi Litteram Videor An Totas Paginas
+image: 'https://www.datocms-assets.com/49813/1623787048-post-1.png'
+image_alt: Post 1 placeholder image
+image_position: right
+thumb_image_alt: Post 1 placeholder image
+thumb_image: 'https://www.datocms-assets.com/49813/1623787048-post-1.png'
 excerpt: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ea mala virtuti
   magnitudine obruebantur. Duo Reges: constructio interrete.
-image_alt: Post 1 placeholder image
-date: "2020-04-16"
-image: "https://www.datocms-assets.com/49645/1623441764-1.png"
+tags: []
+date: '2020-04-16'
 author:
-  type: person
-  bio: >-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl ligula,
-    cursus id molestie vel, maximus aliquet risus.
-  last_name: Ameter
-  photo: "https://www.datocms-assets.com/49645/1623441765-dianne-ameter.jpg"
   photo_alt: Dianne Ameter
+  type: person
+  photo: 'https://www.datocms-assets.com/49813/1623787049-dianne-ameter.jpg'
   first_name: Dianne
-  link: blog/author/dianne-ameter
-  id: dianne-ameter
+  last_name: Ameter
+  id: dameter
+  link: blog/author/dameter
 categories:
-  - link: blog/category/tutorials
+  - type: category
     title: Case Studies
-    type: category
-    id: tutorials
-  - link: case-studies
-    title: Case Studies
-    type: category
-    id: case_study
+    link: blog/category/cases
+    id: cases
+  - type: category
+    title: General
+    link: blog/category/general
+    id: general
+subtitle: >-
+  Atqui pugnantibus et contrariis studiis consiliisque semper utens nihil quieti
+  videre, nihil tranquilli potest.
 title: Utrum Igitur Tibi Litteram Videor An Totas Paginas
 ---
 

@@ -1,81 +1,90 @@
 ---
+seo:
+  extra:
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: article
+      keyName: property
+      name: 'og:type'
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: Vos Autem Cum Perspicuis Dubia Debeatis Illustrare
+      keyName: property
+      name: 'og:title'
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: 'Itaque hoc frequenter dici solet a vobis, non intellegere nos'
+      keyName: property
+      name: 'og:description'
+    - type: stackbit_page_meta_extra
+      relativeUrl: true
+      value: images/classic/post-4.png
+      keyName: property
+      name: 'og:image'
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: summary_large_image
+      keyName: name
+      name: 'twitter:card'
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: Vos Autem Cum Perspicuis Dubia Debeatis Illustrare
+      keyName: name
+      name: 'twitter:title'
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: 'Itaque hoc frequenter dici solet a vobis, non intellegere nos'
+      keyName: name
+      name: 'twitter:description'
+    - type: stackbit_page_meta_extra
+      relativeUrl: true
+      value: images/classic/post-4.png
+      keyName: name
+      name: 'twitter:image'
+  type: stackbit_page_meta
+  title: Vos Autem Cum Perspicuis Dubia Debeatis Illustrare
+  description: 'Itaque hoc frequenter dici solet a vobis, non intellegere nos'
 stackbit_url_path: /blog/post-4
 template: post
-seo:
-  type: stackbit_page_meta
-  description: "Itaque hoc frequenter dici solet a vobis, non intellegere nos"
-  extra:
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "og:type"
-      keyName: property
-      value: article
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "og:title"
-      keyName: property
-      value: Vos Autem Cum Perspicuis Dubia Debeatis Illustrare
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "og:description"
-      keyName: property
-      value: "Itaque hoc frequenter dici solet a vobis, non intellegere nos"
-    - relativeUrl: true
-      type: stackbit_page_meta_extra
-      name: "og:image"
-      keyName: property
-      value: images/4.png
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "twitter:card"
-      keyName: name
-      value: summary_large_image
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "twitter:title"
-      keyName: name
-      value: Vos Autem Cum Perspicuis Dubia Debeatis Illustrare
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "twitter:description"
-      keyName: name
-      value: "Itaque hoc frequenter dici solet a vobis, non intellegere nos"
-    - relativeUrl: true
-      type: stackbit_page_meta_extra
-      name: "twitter:image"
-      keyName: name
-      value: images/4.png
-  title: Vos Autem Cum Perspicuis Dubia Debeatis Illustrare
+image: 'https://www.datocms-assets.com/49813/1623787049-post-4.png'
+image_alt: Post 4 placeholder image
+image_position: right
+thumb_image_alt: Post 4 placeholder image
+thumb_image: 'https://www.datocms-assets.com/49813/1623787049-post-4.png'
 excerpt: >-
   Itaque hoc frequenter dici solet a vobis, non intellegere nos, quam dicat
   Epicurus voluptatem. Sin kakan malitiam dixisses, ad aliud nos unum certum
   vitium consuetudo Latina traduceret.
-image_alt: Post 4 placeholder image
-date: "2020-05-30"
-image: "https://www.datocms-assets.com/49645/1623441765-4.png"
-author:
-  type: person
-  bio: >-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl ligula,
-    cursus id molestie vel, maximus aliquet risus.
-  last_name: Ameter
-  photo: "https://www.datocms-assets.com/49645/1623441765-dianne-ameter.jpg"
-  photo_alt: Dianne Ameter
-  first_name: Dianne
-  link: blog/author/dianne-ameter
-  id: dianne-ameter
 tags:
-  - JAMstack
-  - Sourcebit
+  - type: tag
+    link: blog/tag/jamstack
+    title: JAMstack
+    id: jamstack
+  - type: tag
+    link: blog/tag/sourcebit
+    title: Sourcebit
+    id: sourcebit
+date: '2020-05-30'
+author:
+  photo_alt: Dianne Ameter
+  type: person
+  photo: 'https://www.datocms-assets.com/49813/1623787049-dianne-ameter.jpg'
+  first_name: Dianne
+  last_name: Ameter
+  id: dameter
+  link: blog/author/dameter
 categories:
-  - link: blog/category/tutorials
+  - type: category
     title: Case Studies
-    type: category
-    id: tutorials
-  - link: blog/category/news
+    link: blog/category/cases
+    id: cases
+  - type: category
     title: News
-    type: category
+    link: blog/category/news
     id: news
+subtitle: >-
+  Negat esse eam, inquit, propter se expetendam. Ergo, si semel tristior
+  effectus est, hilara vita amissa est.
 title: Vos Autem Cum Perspicuis Dubia Debeatis Illustrare
 ---
 

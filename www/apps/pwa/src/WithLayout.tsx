@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react"
-import { ThemeProvider } from "@material-ui/core/styles"
 import { Paper } from "@material-ui/core"
 import CssBaseline from "@material-ui/core/CssBaseline"
-import getTheme from "theme"
+import { ThemeProvider } from "@waweb/uikit.theme.theme-provider"
 
 import AOS from "aos"
 
@@ -10,7 +9,7 @@ export const useDarkMode = () => {
   const [themeMode, setTheme] = useState("light")
   const [mountedComponent, setMountedComponent] = useState(false)
 
-  const setMode = (mode) => {
+  const setMode = (mode: "light" | "dark") => {
     window.localStorage.setItem("themeMode", mode)
     setTheme(mode)
   }
@@ -65,7 +64,7 @@ export default function WithLayout({
   if (!mountedComponent) return <div />
 
   return (
-    <ThemeProvider theme={getTheme(themeMode)}>
+    <ThemeProvider colorScheme={themeMode}>
       {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <CssBaseline />
       <Paper elevation={0}>

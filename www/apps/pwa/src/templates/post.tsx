@@ -1,11 +1,12 @@
 import React from "react"
 import _ from "lodash"
 import moment from "moment-strftime"
-import { graphql } from "gatsby"
+import { graphql, PageProps } from "gatsby"
 
 import { Layout } from "../components/index"
-import { withPrefix, Link, htmlToReact } from "@waweb/utils"
+import { classNames, withPrefix, htmlToReact } from "@waweb/utils"
 import BlogPostCategories from "../components/BlogPostCategories"
+import BlogPostAuthor from "../components/BlogPostAuthor"
 import BlogPostTags from "../components/BlogPostTags"
 
 // this minimal GraphQL query ensures that when 'gatsby develop' is running,
@@ -18,88 +19,135 @@ export const query = graphql`
   }
 `
 
-const Post: React.FC<any> = (props) => {
-  return (
-    <Layout {...props}>
-      <article className="post">
-        <div className="container container--md">
-          {_.get(props, "pageContext.frontmatter.image", null) && (
-            <div className="post__image">
-              <img
-                src={withPrefix(
-                  _.get(props, "pageContext.frontmatter.image", null)
-                )}
-                alt={_.get(props, "pageContext.frontmatter.image_alt", null)}
-              />
-            </div>
-          )}
-          <header className="post__header">
-            {_.get(props, "pageContext.frontmatter.categories", null) && (
-              <BlogPostCategories
-                {...props}
-                categories={_.get(
-                  props,
-                  "pageContext.frontmatter.categories",
-                  null
-                )}
-                container_class={"post__meta"}
-              />
-            )}
-            <h1 className="post__title">
-              {_.get(props, "pageContext.frontmatter.title", null)}
-            </h1>
-            <div className="post__meta">
-              <span>
-                On{" "}
-                <time
-                  dateTime={moment(
-                    _.get(props, "pageContext.frontmatter.date", null)
-                  ).strftime("%Y-%m-%d %H:%M")}
+export default class Post extends React.Component<PageProps> {
+  props: PageProps
+  render() {
+    let has_image = false
+    let image_pos =
+      _.get(this.props, "pageContext.frontmatter.image_position", null) || "top"
+    if (_.get(this.props, "pageContext.frontmatter.image", null)) {
+      has_image = true
+    }
+    return (
+      <Layout {...this.props}>
+        <article className="post py-5 py-sm-6 py-md-7">
+          <div
+            className={classNames("post__hero", "container", {
+              "container--medium": image_pos === "top" || has_image === false,
+            })}
+          >
+            <div
+              className={classNames("mb-4", {
+                "mb-md-5": image_pos !== "top",
+                "mb-md-6": image_pos !== "top",
+                grid: image_pos !== "top",
+                "items-center": has_image && image_pos !== "top",
+              })}
+            >
+              {has_image && (
+                <div
+                  className={classNames("post__image", "mb-3", {
+                    "cell-12": image_pos !== "top",
+                    "cell-lg-7": image_pos !== "top",
+                    "mb-lg-0": image_pos !== "top",
+                  })}
                 >
-                  {moment(
-                    _.get(props, "pageContext.frontmatter.date", null)
-                  ).strftime("%B %d, %Y")}
-                </time>
-              </span>
-              {_.get(props, "pageContext.frontmatter.author", null) &&
-                (() => {
-                  const author = _.get(
-                    props,
-                    "pageContext.frontmatter.author",
+                  <img
+                    src={withPrefix(
+                      _.get(this.props, "pageContext.frontmatter.image", null)
+                    )}
+                    alt={_.get(
+                      this.props,
+                      "pageContext.frontmatter.image_alt",
+                      null
+                    )}
+                  />
+                </div>
+              )}
+              <header
+                className={classNames("post__header", {
+                  "cell-12": image_pos !== "top",
+                  "cell-lg-5": image_pos !== "top",
+                  "order-lg-first": has_image && image_pos === "right",
+                })}
+              >
+                <div className="post__meta mb-2">
+                  {_.get(
+                    this.props,
+                    "pageContext.frontmatter.categories",
                     null
-                  )
-                  return author.link ? (
-                    <span>
-                      {" "}
-                      by{" "}
-                      <Link to={withPrefix(author.link)}>
-                        {author.first_name} {author.last_name}
-                      </Link>
-                    </span>
-                  ) : (
-                    <span>
-                      {" "}
-                      by {author.first_name} {author.last_name}
-                    </span>
-                  )
-                })()}
+                  ) && (
+                    <React.Fragment>
+                      <BlogPostCategories
+                        {...this.props}
+                        categories={_.get(
+                          this.props,
+                          "pageContext.frontmatter.categories",
+                          null
+                        )}
+                        container_class={"post__cat"}
+                      />
+                      <span className="post__meta-sep"> &middot; </span>
+                    </React.Fragment>
+                  )}
+                  <span className="post__date">
+                    <time
+                      dateTime={moment(
+                        _.get(this.props, "pageContext.frontmatter.date", null)
+                      ).strftime("%Y-%m-%d %H:%M")}
+                    >
+                      {moment(
+                        _.get(this.props, "pageContext.frontmatter.date", null)
+                      ).strftime("%B %d, %Y")}
+                    </time>
+                  </span>
+                </div>
+                <h1 className="post__title mt-0">
+                  {_.get(this.props, "pageContext.frontmatter.title", null)}
+                </h1>
+                {_.get(
+                  this.props,
+                  "pageContext.frontmatter.subtitle",
+                  null
+                ) && (
+                  <p className="post__subtitle">
+                    {_.get(
+                      this.props,
+                      "pageContext.frontmatter.subtitle",
+                      null
+                    )}
+                  </p>
+                )}
+                {_.get(this.props, "pageContext.frontmatter.author", null) && (
+                  <BlogPostAuthor
+                    {...this.props}
+                    author={_.get(
+                      this.props,
+                      "pageContext.frontmatter.author",
+                      null
+                    )}
+                    container_class={"post__byline"}
+                    avatar_size={"medium"}
+                  />
+                )}
+              </header>
             </div>
-          </header>
-          <div className="post__copy">
-            {htmlToReact(_.get(props, "pageContext.html", null))}
           </div>
-          {_.get(props, "pageContext.frontmatter.tags", null) && (
-            <footer className="post__footer">
-              <BlogPostTags
-                {...props}
-                tags={_.get(props, "pageContext.frontmatter.tags", null)}
-              />
-            </footer>
-          )}
-        </div>
-      </article>
-    </Layout>
-  )
+          <div className="container container--medium">
+            <div className="post__body text-block">
+              {htmlToReact(_.get(this.props, "pageContext.html", null))}
+            </div>
+            {_.get(this.props, "pageContext.frontmatter.tags", null) && (
+              <footer className="post__footer mt-4 mt-md-5">
+                <BlogPostTags
+                  {...this.props}
+                  tags={_.get(this.props, "pageContext.frontmatter.tags", null)}
+                />
+              </footer>
+            )}
+          </div>
+        </article>
+      </Layout>
+    )
+  }
 }
-
-export default Post

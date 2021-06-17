@@ -1,7 +1,7 @@
 /**
  * this is the main configuration file of your bit workspace.
  * for full documentation, please see: https://harmony-docs.bit.dev/workspace/configurations
- **/{
+ **/ {
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
   /**
    * main configuration of the Bit workspace.
@@ -14,7 +14,7 @@
     /**
      * set the icon to be shown on the Bit server.
      **/
-    "icon": "https://gitlab.com/waweb/assets/-/raw/main/graphics/wa-icon/PNG/wa-iconxhdpi.png",
+    "icon": "https://cdn.watheia.org/assets/icon.png",
     /**
      * default directory for all components in workspace, the following placeholders are available:
      * name - component name includes namespace, e.g. 'ui/button'.
@@ -47,6 +47,8 @@
         "@types/node": "15.6.1",
         "@types/react": "17.0.8",
         "@types/react-dom": "17.0.5",
+        "@watheia/base-ui.atoms.image-base": "0.1.0",
+        "@watheia/base-ui.constants.storage": "0.2.0",
         "eslint": "7.27.0",
         "eslint-config-airbnb-typescript": {
           "version": "5.1.0",
@@ -75,10 +77,9 @@
       }
     },
     "packageManagerArgs": [],
-    "devFilePatterns": [
-      "**/*.spec.ts"
-    ],
-    "strictPeerDependencies": true
+    "devFilePatterns": ["**/*.spec.ts"],
+    "strictPeerDependencies": true,
+    "installFromBitDevRegistry": true
   },
   /**
    * workspace variants allow to set different subsets of configuration for components in your workspace.
@@ -92,9 +93,7 @@
     "*": {
       "defaultScope": "waweb.uikit",
       "teambit.pkg/pkg": {
-        "packageManagerPublishArgs": [
-          "--access public"
-        ],
+        "packageManagerPublishArgs": ["--access public"],
         "packageJson": {
           "name": "@waweb/uikit.{name}",
           "private": false,

@@ -1,11 +1,8 @@
 import React from "react"
-import { graphql, PageProps } from "gatsby"
-import { upperFirst, get, map, camelCase } from "lodash"
+import _ from "lodash"
+import { graphql } from "gatsby"
 
-import sections from "../content/sections"
-import { Layout } from "../components"
-import WithLayout from "WithLayout"
-import Main from "layouts/Main"
+import components, { Layout } from "../components/index"
 
 // this minimal GraphQL query ensures that when 'gatsby develop' is running,
 // any changes to content files are reflected in browser
@@ -17,34 +14,28 @@ export const query = graphql`
   }
 `
 
-export type AdvancedProps = {
-  pageContext: any
-} & PageProps
-
-export default class Advanced extends React.Component<AdvancedProps> {
+export default class Advanced extends React.Component {
   render() {
-    const children = map(
-      get(this.props, "pageContext.frontmatter.sections", null),
-      (section, section_idx) => {
-        const component = upperFirst(camelCase(get(section, "type", null)))
-        const Component = sections[component]
-        return (
-          <Component
-            key={section_idx}
-            {...this.props}
-            section={section}
-            site={this.props.pageContext.site}
-          />
-        )
-      }
-    )
-
     return (
-      <WithLayout
-        layout={Main}
-        component={() => <div>{children}</div>}
-        {...this.props}
-      />
+      <Layout {...this.props}>
+        {_.map(
+          _.get(this.props, "pageContext.frontmatter.sections", null),
+          (section, section_idx) => {
+            let component = _.upperFirst(
+              _.camelCase(_.get(section, "type", null))
+            )
+            let Component = components[component]
+            return (
+              <Component
+                key={section_idx}
+                {...this.props}
+                section={section}
+                site={this.props.pageContext.site}
+              />
+            )
+          }
+        )}
+      </Layout>
     )
   }
 }

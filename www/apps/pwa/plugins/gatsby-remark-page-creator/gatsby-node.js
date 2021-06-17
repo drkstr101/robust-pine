@@ -36,7 +36,7 @@ exports.onCreateNode = ({ node, getNode, actions }, options) => {
   if (node.internal.type === "MarkdownRemark") {
     let fileNode = findFileNode({ node, getNode })
     if (!fileNode) {
-      throw Error(
+      throw new Error(
         "could not find parent File node for MarkdownRemark node: " + node
       )
     }

@@ -1,13 +1,15 @@
 /** @format */
 
+import { CssBaseline, MuiThemeProvider } from "@material-ui/core"
 import React, { ReactNode } from "react"
-import { Theme } from "./theme"
+import { createTheme, ColorScheme, Theme } from "./theme"
+import { Provider, defaultTheme, Button } from "@adobe/react-spectrum"
 
 export type ThemeProviderProps = {
   /**
    * primary color of theme.
    */
-  color?: string
+  colorScheme?: ColorScheme
 
   /**
    * children to be rendered within this theme.
@@ -15,6 +17,16 @@ export type ThemeProviderProps = {
   children: ReactNode
 }
 
-export function ThemeProvider({ color, children }: ThemeProviderProps) {
-  return <Theme.Provider value={{ color }}>{children}</Theme.Provider>
+export function ThemeProvider({ colorScheme, children }: ThemeProviderProps) {
+  const theme = createTheme(colorScheme)
+  return (
+    <Theme.Provider value={{ colorScheme }}>
+      <MuiThemeProvider theme={theme}>
+        {/* <CssBaseline /> */}
+        <Provider theme={defaultTheme} colorScheme={colorScheme}>
+          {children}
+        </Provider>
+      </MuiThemeProvider>
+    </Theme.Provider>
+  )
 }

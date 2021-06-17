@@ -1,16 +1,8 @@
-/** @format */
-
 const siteMetadata = require("./site-metadata.json")
 
 module.exports = {
   pathPrefix: "/",
   siteMetadata: siteMetadata,
-  flags: {
-    PRESERVE_WEBPACK_CACHE: true,
-    LMDB_STORE: true,
-    PARALLEL_SOURCING: true,
-    PRESERVE_FILE_DOWNLOAD_CACHE: true,
-  },
   plugins: [
     {
       resolve: `gatsby-remark-page-creator`,
@@ -23,27 +15,8 @@ module.exports = {
         pageContextProperty: `menus`,
       },
     },
-    "gatsby-plugin-top-layout",
+    `gatsby-plugin-top-layout`,
     `gatsby-plugin-graphql-codegen`,
-    // {
-    //   resolve: "gatsby-plugin-material-ui",
-    //   // If you want to use styled components you should change the injection order.
-    //   options: {
-    //     // stylesProvider: {
-    //     //   injectFirst: true,
-    //     // },
-    //     disableAutoprefixing: true,
-    //     disableMinification: true,
-    //   },
-    // },
-    // If you want to use styled components you should add the plugin here.
-    // 'gatsby-plugin-styled-components',
-    // {
-    //   resolve: "gatsby-plugin-page-creator",
-    //   options: {
-    //     path: `${__dirname}/pages`,
-    //   },
-    // },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -100,14 +73,6 @@ module.exports = {
         icon: `static/images/icon.png`,
       },
     },
-    // `gatsby-plugin-mdx`,
-    // {
-    //   resolve: "gatsby-plugin-page-creator",
-    //   options: {
-    //     path: `${__dirname}/src/pages`,
-    //     extensions: [`.mdx`, `.md`],
-    //   },
-    // },
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -120,32 +85,5 @@ module.exports = {
       resolve: `gatsby-plugin-sass`,
       options: {},
     },
-    // {
-    //   resolve: `gatsby-source-datocms`,
-    //   options: {
-    //     // You can find your read-only API token under the Settings > API tokens
-    //     // section of your administrative area. Make sure to grant both CDA and CMA permissions.
-    //     apiToken: process.env.DATOCMS_ACCESS_TOKEN,
-
-    //     // The project environment to read from. Defaults to the primary environment:
-    //     environment: `main`,
-
-    //     // If you are working on development/staging environment, you might want to
-    //     // preview the latest version of records instead of the published one:
-    //     previewMode: true,
-
-    //     // Disable automatic reloading of content when some change occurs on DatoCMS:
-    //     disableLiveReload: false,
-
-    //     // Custom API base URL (most don't need this)
-    //     // apiUrl: 'https://site-api.datocms.com',
-
-    //     // Setup locale fallbacks
-    //     // In this example, if some field value is missing in Italian, fall back to English
-    //     localeFallbacks: {
-    //       it: ['en'],
-    //     },
-    //   },
-    // },
   ],
 }

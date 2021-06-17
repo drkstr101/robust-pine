@@ -1,77 +1,86 @@
 ---
+seo:
+  extra:
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: article
+      keyName: property
+      name: 'og:type'
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: Cur Ipse Pythagoras Et Aegyptum Lustravit
+      keyName: property
+      name: 'og:title'
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: 'Quis est, qui non oderit libidinosam, protervam adolescentiam'
+      keyName: property
+      name: 'og:description'
+    - type: stackbit_page_meta_extra
+      relativeUrl: true
+      value: images/classic/post-3.png
+      keyName: property
+      name: 'og:image'
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: summary_large_image
+      keyName: name
+      name: 'twitter:card'
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: Cur Ipse Pythagoras Et Aegyptum Lustravit
+      keyName: name
+      name: 'twitter:title'
+    - type: stackbit_page_meta_extra
+      relativeUrl: false
+      value: 'Quis est, qui non oderit libidinosam, protervam adolescentiam'
+      keyName: name
+      name: 'twitter:description'
+    - type: stackbit_page_meta_extra
+      relativeUrl: true
+      value: images/classic/post-3.png
+      keyName: name
+      name: 'twitter:image'
+  type: stackbit_page_meta
+  title: Cur Ipse Pythagoras Et Aegyptum Lustravit
+  description: 'Quis est, qui non oderit libidinosam, protervam adolescentiam'
 stackbit_url_path: /blog/post-3
 template: post
-seo:
-  type: stackbit_page_meta
-  description: "Quis est, qui non oderit libidinosam, protervam adolescentiam"
-  extra:
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "og:type"
-      keyName: property
-      value: article
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "og:title"
-      keyName: property
-      value: Cur Ipse Pythagoras Et Aegyptum Lustravit
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "og:description"
-      keyName: property
-      value: "Quis est, qui non oderit libidinosam, protervam adolescentiam"
-    - relativeUrl: true
-      type: stackbit_page_meta_extra
-      name: "og:image"
-      keyName: property
-      value: images/3.png
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "twitter:card"
-      keyName: name
-      value: summary_large_image
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "twitter:title"
-      keyName: name
-      value: Cur Ipse Pythagoras Et Aegyptum Lustravit
-    - relativeUrl: false
-      type: stackbit_page_meta_extra
-      name: "twitter:description"
-      keyName: name
-      value: "Quis est, qui non oderit libidinosam, protervam adolescentiam"
-    - relativeUrl: true
-      type: stackbit_page_meta_extra
-      name: "twitter:image"
-      keyName: name
-      value: images/3.png
-  title: Cur Ipse Pythagoras Et Aegyptum Lustravit
+image: 'https://www.datocms-assets.com/49813/1623787049-post-3.png'
+image_alt: Post 3 placeholder image
+image_position: top
+thumb_image_alt: Post 3 placeholder image
+thumb_image: 'https://www.datocms-assets.com/49813/1623787049-post-3.png'
 excerpt: >-
   Quis est, qui non oderit libidinosam, protervam adolescentiam? Innumerabilia
   dici possunt in hanc sententiam, sed non necesse est. Putabam equidem satis,
   inquit, me dixisse.
-image_alt: Post 3 placeholder image
-date: "2020-05-28"
-image: "https://www.datocms-assets.com/49645/1623441765-3.png"
-author:
-  type: person
-  bio: >-
-    Sagittis nisl rhoncus mattis rhoncus urna neque viverra. In est ante in nibh
-    mauris cursus mattis molestie porta non pulvinar neque.
-  last_name: Norman
-  photo: "https://www.datocms-assets.com/49645/1623441766-gordon-norman.jpg"
-  photo_alt: Gordon Norman
-  first_name: Gordon
-  link: blog/author/gordon-norman
-  id: gordon-norman
 tags:
-  - Stackbit
-  - JAMstack
+  - type: tag
+    link: blog/tag/stackbit
+    title: Stackbit
+    id: stackbit
+  - type: tag
+    link: blog/tag/jamstack
+    title: JAMstack
+    id: jamstack
+date: '2020-05-28'
+author:
+  photo_alt: Gustav Purpleson
+  type: person
+  photo: 'https://www.datocms-assets.com/49813/1623787050-gustav-purpleson.jpg'
+  first_name: Aaron
+  last_name: Miller
+  id: amiller
+  link: blog/author/amiller
 categories:
-  - link: case-studies
-    title: Case Studies
-    type: category
-    id: case_study
+  - type: category
+    title: General
+    link: blog/category/general
+    id: general
+subtitle: >-
+  Innumerabilia dici possunt in hanc sententiam, sed non necesse est. Putabam
+  equidem satis, inquit, me dixisse.
 title: Cur Ipse Pythagoras Et Aegyptum Lustravit
 ---
 

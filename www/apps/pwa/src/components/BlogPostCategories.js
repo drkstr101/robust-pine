@@ -9,8 +9,7 @@ export default class BlogPostCategories extends React.Component {
     let container_class = _.get(this.props, "container_class", null)
     let category_len = _.size(categories)
     return (
-      <div className={container_class}>
-        <span>In </span>
+      <span className={container_class}>
         {_.map(categories, (category, category_idx) => {
           let category_data = category
           return category_data.link ? (
@@ -27,7 +26,7 @@ export default class BlogPostCategories extends React.Component {
             </React.Fragment>
           )
         })}
-      </div>
+      </span>
     )
   }
 }

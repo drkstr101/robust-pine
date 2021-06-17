@@ -1,96 +1,311 @@
 import React from "react"
 import _ from "lodash"
 
-import Action from "./Action"
-import { htmlToReact } from "@waweb/utils"
+import { classNames, Link, withPrefix, htmlToReact } from "@waweb/utils"
+import FooterMenu from "./FooterMenu"
+import Icon from "./Icon"
 
 export default class Footer extends React.Component {
   render() {
+    let has_logo = false
+    let footer_content = false
+    let footer_social = false
+    if (_.get(this.props, "pageContext.site.siteMetadata.footer.logo", null)) {
+      has_logo = true
+    }
+    if (
+      _.get(this.props, "pageContext.site.siteMetadata.footer.content", null) ||
+      _.get(this.props, "pageContext.site.siteMetadata.footer.links", null)
+    ) {
+      footer_content = true
+    }
+    if (
+      _.get(
+        this.props,
+        "pageContext.site.siteMetadata.footer.has_social",
+        null
+      ) &&
+      _.get(
+        this.props,
+        "pageContext.site.siteMetadata.footer.social_links",
+        null
+      )
+    ) {
+      footer_social = true
+    }
     return (
-      <footer className="site-footer">
-        <div className="container container--lg">
-          {(_.get(
-            this.props,
-            "pageContext.site.siteMetadata.footer.has_nav",
-            null
-          ) ||
+      <React.Fragment>
+        <footer className="site-footer">
+          {(has_logo ||
             _.get(
               this.props,
-              "pageContext.site.siteMetadata.footer.has_social",
+              "pageContext.site.siteMetadata.footer.has_primary_nav",
+              null
+            ) ||
+            _.get(
+              this.props,
+              "pageContext.site.siteMetadata.footer.has_secondary_nav",
+              null
+            ) ||
+            _.get(
+              this.props,
+              "pageContext.site.siteMetadata.footer.has_tertiary_nav",
               null
             )) && (
-            <div className="site-footer__nav">
-              {_.get(
-                this.props,
-                "pageContext.site.siteMetadata.footer.has_nav",
-                null
-              ) && (
-                <ul className="site-footer__menu menu">
-                  {_.map(
+            <div className="site-footer__nav py-5 py-md-6">
+              <div className="container">
+                <div
+                  className={classNames("grid", {
+                    "justify-md-center": has_logo === false,
+                  })}
+                >
+                  {has_logo && (
+                    <Link
+                      className="site-footer__logo cell-12 cell-md-5 my-4"
+                      to={withPrefix("/")}
+                    >
+                      <img
+                        src={withPrefix(
+                          _.get(
+                            this.props,
+                            "pageContext.site.siteMetadata.footer.logo",
+                            null
+                          )
+                        )}
+                        alt={_.get(
+                          this.props,
+                          "pageContext.site.siteMetadata.header.logo_alt",
+                          null
+                        )}
+                      />
+                    </Link>
+                  )}
+                  {_.get(
+                    this.props,
+                    "pageContext.site.siteMetadata.footer.has_primary_nav",
+                    null
+                  ) &&
                     _.get(
                       this.props,
-                      "pageContext.site.siteMetadata.footer.nav_links",
+                      "pageContext.site.siteMetadata.footer.primary_nav_links",
                       null
-                    ),
-                    (action, action_idx) => (
-                      <li key={action_idx}>
-                        <Action {...this.props} action={action} />
-                      </li>
-                    )
-                  )}
-                </ul>
-              )}
-              {_.get(
-                this.props,
-                "pageContext.site.siteMetadata.footer.has_social",
-                null
-              ) && (
-                <ul className="site-footer__social menu">
-                  {_.map(
+                    ) && (
+                      <div className="site-footer__menu cell-12 cell-md my-3 my-md-4">
+                        {_.get(
+                          this.props,
+                          "pageContext.site.siteMetadata.footer.primary_nav_title",
+                          null
+                        ) && (
+                          <h2 className="h4 mb-3 mb-md-4">
+                            {_.get(
+                              this.props,
+                              "pageContext.site.siteMetadata.footer.primary_nav_title",
+                              null
+                            )}
+                          </h2>
+                        )}
+                        <FooterMenu
+                          {...this.props}
+                          footer_menu={_.get(
+                            this.props,
+                            "pageContext.site.siteMetadata.footer.primary_nav_links",
+                            null
+                          )}
+                        />
+                      </div>
+                    )}
+                  {_.get(
+                    this.props,
+                    "pageContext.site.siteMetadata.footer.has_secondary_nav",
+                    null
+                  ) &&
                     _.get(
                       this.props,
-                      "pageContext.site.siteMetadata.footer.social_links",
+                      "pageContext.site.siteMetadata.footer.secondary_nav_links",
                       null
-                    ),
-                    (action, action_idx) => (
-                      <li key={action_idx}>
-                        <Action {...this.props} action={action} />
-                      </li>
-                    )
-                  )}
-                </ul>
-              )}
+                    ) && (
+                      <div className="site-footer__menu cell-12 cell-md my-3 my-md-4">
+                        {_.get(
+                          this.props,
+                          "pageContext.site.siteMetadata.footer.secondary_nav_title",
+                          null
+                        ) && (
+                          <h2 className="h4 mb-3 mb-md-4">
+                            {_.get(
+                              this.props,
+                              "pageContext.site.siteMetadata.footer.secondary_nav_title",
+                              null
+                            )}
+                          </h2>
+                        )}
+                        <FooterMenu
+                          {...this.props}
+                          footer_menu={_.get(
+                            this.props,
+                            "pageContext.site.siteMetadata.footer.secondary_nav_links",
+                            null
+                          )}
+                        />
+                      </div>
+                    )}
+                  {_.get(
+                    this.props,
+                    "pageContext.site.siteMetadata.footer.has_tertiary_nav",
+                    null
+                  ) &&
+                    _.get(
+                      this.props,
+                      "pageContext.site.siteMetadata.footer.tertiary_nav_links",
+                      null
+                    ) && (
+                      <div className="site-footer__menu cell-12 cell-md my-3 my-md-4">
+                        {_.get(
+                          this.props,
+                          "pageContext.site.siteMetadata.footer.tertiary_nav_title",
+                          null
+                        ) && (
+                          <h2 className="h4 mb-3 mb-md-4">
+                            {_.get(
+                              this.props,
+                              "pageContext.site.siteMetadata.footer.tertiary_nav_title",
+                              null
+                            )}
+                          </h2>
+                        )}
+                        <FooterMenu
+                          {...this.props}
+                          footer_menu={_.get(
+                            this.props,
+                            "pageContext.site.siteMetadata.footer.tertiary_nav_links",
+                            null
+                          )}
+                        />
+                      </div>
+                    )}
+                </div>
+              </div>
             </div>
           )}
-          <div className="site-footer__copyright">
-            {_.get(
-              this.props,
-              "pageContext.site.siteMetadata.footer.content",
-              null
-            ) && (
-              <span>
-                {htmlToReact(
-                  _.get(
-                    this.props,
-                    "pageContext.site.siteMetadata.footer.content",
-                    null
-                  )
-                )}
-              </span>
-            )}
-            {_.map(
-              _.get(
-                this.props,
-                "pageContext.site.siteMetadata.footer.links",
-                null
-              ),
-              (action, action_idx) => (
-                <Action key={action_idx} {...this.props} action={action} />
-              )
-            )}
-          </div>
-        </div>
-      </footer>
+          {(footer_content || footer_social) && (
+            <div className="site-footer__info py-3 py-sm-4">
+              <div className="container">
+                <div className="grid items-center">
+                  {footer_content && (
+                    <div
+                      className={classNames(
+                        "site-footer__copyright",
+                        "cell-12",
+                        { "cell-sm": footer_social }
+                      )}
+                    >
+                      {_.get(
+                        this.props,
+                        "pageContext.site.siteMetadata.footer.content",
+                        null
+                      ) && (
+                        <span>
+                          {htmlToReact(
+                            _.get(
+                              this.props,
+                              "pageContext.site.siteMetadata.footer.content",
+                              null
+                            )
+                          )}
+                        </span>
+                      )}
+                      {_.map(
+                        _.get(
+                          this.props,
+                          "pageContext.site.siteMetadata.footer.links",
+                          null
+                        ),
+                        (link, link_idx) => (
+                          <Link
+                            key={link_idx}
+                            to={withPrefix(_.get(link, "url", null))}
+                            {...(_.get(link, "new_window", null)
+                              ? { target: "_blank" }
+                              : null)}
+                            {...(_.get(link, "new_window", null) ||
+                            _.get(link, "no_follow", null)
+                              ? {
+                                  rel:
+                                    (_.get(link, "new_window", null)
+                                      ? "noopener "
+                                      : "") +
+                                    (_.get(link, "no_follow", null)
+                                      ? "nofollow"
+                                      : ""),
+                                }
+                              : null)}
+                          >
+                            {_.get(link, "label", null)}
+                          </Link>
+                        )
+                      )}
+                    </div>
+                  )}
+                  {footer_social && (
+                    <div
+                      className={classNames("site-footer__social", "cell-12", {
+                        "cell-sm-auto": footer_content,
+                      })}
+                    >
+                      {_.map(
+                        _.get(
+                          this.props,
+                          "pageContext.site.siteMetadata.footer.social_links",
+                          null
+                        ),
+                        (link, link_idx) => {
+                          let link_style = _.get(link, "style", null) || "link"
+                          return (
+                            _.get(link, "has_icon", null) &&
+                            _.get(link, "icon", null) && (
+                              <Link
+                                key={link_idx}
+                                to={withPrefix(_.get(link, "url", null))}
+                                {...(_.get(link, "new_window", null)
+                                  ? { target: "_blank" }
+                                  : null)}
+                                {...(_.get(link, "new_window", null) ||
+                                _.get(link, "no_follow", null)
+                                  ? {
+                                      rel:
+                                        (_.get(link, "new_window", null)
+                                          ? "noopener "
+                                          : "") +
+                                        (_.get(link, "no_follow", null)
+                                          ? "nofollow"
+                                          : ""),
+                                    }
+                                  : null)}
+                                className={classNames("btn", "btn--icon", {
+                                  "btn--primary": link_style === "primary",
+                                  "btn--secondary": link_style === "secondary",
+                                  "btn--clear": link_style === "link",
+                                })}
+                              >
+                                <Icon
+                                  {...this.props}
+                                  icon={_.get(link, "icon", null)}
+                                />
+                                <span className="sr-only">
+                                  {_.get(link, "label", null)}
+                                </span>
+                              </Link>
+                            )
+                          )
+                        }
+                      )}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+        </footer>
+      </React.Fragment>
     )
   }
 }
