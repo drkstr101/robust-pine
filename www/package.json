@@ -52,6 +52,7 @@
     "@prisma/client": "^2.25.0",
     "@stackbit/gatsby-plugin-menus": "0.0.4",
     "@watheia/com.ui.atoms.image": "^0.0.6",
+    "@waweb/uikit.theme.theme-provider": "1.0.0",
     "aos": "^2.3.4",
     "babel-runtime": "6.26.0",
     "chokidar": "3.5.2",

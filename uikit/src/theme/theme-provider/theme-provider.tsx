@@ -4,6 +4,7 @@ import { CssBaseline, MuiThemeProvider } from "@material-ui/core"
 import React, { ReactNode } from "react"
 import { createTheme, ColorScheme, Theme } from "./theme"
 import { Provider, defaultTheme, Button } from "@adobe/react-spectrum"
+import "./sass/main.scss"
 
 export type ThemeProviderProps = {
   /**

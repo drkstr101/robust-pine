@@ -214,9 +214,9 @@
         "logo": "https://www.datocms-assets.com/49813/1623881534-logo-banner.svg"
     },
     "mode": "light",
-    "base_font": "serif",
-    "style": "classic",
-    "palette": "gray",
+    "base_font": "sans-serif",
+    "style": "bold",
+    "palette": "blue",
     "layout_type": "boxed",
     "favicon": "https://www.datocms-assets.com/49813/1623882604-icon.png",
     "domain": "https://watheia.app/",

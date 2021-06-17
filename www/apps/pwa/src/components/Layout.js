@@ -3,10 +3,10 @@ import { Helmet } from "react-helmet"
 import _ from "lodash"
 
 import { withPrefix, attribute } from "@waweb/utils"
-import "../sass/main.scss"
 import Announcement from "./Announcement"
 import Header from "./Header"
 import Footer from "./Footer"
+import { ThemeProvider } from "@waweb/uikit.theme.theme-provider"
 
 export default class Body extends React.Component {
   render() {
@@ -17,7 +17,7 @@ export default class Body extends React.Component {
       _.get(this.props, "pageContext.site.siteMetadata.base_font", null) ||
       "sans-serif"
     return (
-      <React.Fragment>
+      <ThemeProvider colorScheme="light">
         <Helmet>
           <title>
             {_.get(this.props, "pageContext.frontmatter.seo.title", null)
@@ -89,41 +89,6 @@ export default class Body extends React.Component {
               )
             }
           )}
-          {style === "bold" ? (
-            font === "serif" ? (
-              <link
-                href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-                rel="stylesheet"
-              />
-            ) : (
-              <link
-                href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-                rel="stylesheet"
-              />
-            )
-          ) : style === "classic" ? (
-            font === "serif" ? (
-              <link
-                href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-                rel="stylesheet"
-              />
-            ) : (
-              <link
-                href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-                rel="stylesheet"
-              />
-            )
-          ) : font === "serif" ? (
-            <link
-              href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-              rel="stylesheet"
-            />
-          ) : (
-            <link
-              href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-              rel="stylesheet"
-            />
-          )}
           {_.get(this.props, "pageContext.site.siteMetadata.favicon", null) && (
             <link
               rel="icon"
@@ -151,6 +116,7 @@ export default class Body extends React.Component {
             }
           />
         </Helmet>
+
         <div id="site-wrap" className="site">
           {_.get(
             this.props,
@@ -195,7 +161,7 @@ export default class Body extends React.Component {
             "pageContext.site.siteMetadata.header.has_secondary_nav",
             null
           )) && <div className="nav-overlay js-nav-toggle" />}
-      </React.Fragment>
+      </ThemeProvider>
     )
   }
 }

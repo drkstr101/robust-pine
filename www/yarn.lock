@@ -25,7 +25,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@adobe/react-spectrum@npm:^3.11.0":
+"@adobe/react-spectrum@npm:3.11.0":
   version: 3.11.0
   resolution: "@adobe/react-spectrum@npm:3.11.0"
   dependencies:
@@ -8401,17 +8401,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@waweb/uikit.theme.theme-provider@npm:^0.0.2":
-  version: 0.0.2
-  resolution: "@waweb/uikit.theme.theme-provider@npm:0.0.2"
+"@waweb/uikit.theme.theme-provider@npm:1.0.0":
+  version: 1.0.0
+  resolution: "@waweb/uikit.theme.theme-provider@npm:1.0.0"
   dependencies:
-    "@adobe/react-spectrum": ^3.11.0
+    "@adobe/react-spectrum": 3.11.0
     "@material-ui/core": 4.11.4
     core-js: ^3.0.0
   peerDependencies:
     react: ^16.8.0 || ^17.0.0
     react-dom: ^16.8.0 || ^17.0.0
-  checksum: be94410db9cc345443668d2eb7f3f1f92eb80fd9f6a23b6852f81ae5737b6b30c9257b9c28f36b386974f166ec2483c3de2fdd47f54c5c7ae3ceaf78336513f5
+  checksum: f1a3b3334ca08305d4e2e73e620d1478b5fb832f44fa7dd96a931c187fcf771a6aab14db51232ec2a9a5681f84ecd7d8fcba2b5c8e94ae0d9534db32ee17d365
   languageName: node
   linkType: hard
 
@@ -8472,7 +8472,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": 4.27.0
     "@typescript-eslint/parser": 4.27.0
     "@watheia/com.ui.atoms.image": ^0.0.6
-    "@waweb/uikit.theme.theme-provider": ^0.0.2
+    "@waweb/uikit.theme.theme-provider": 1.0.0
     aos: ^2.3.4
     babel-eslint: ^10.1.0
     babel-jest: 27.0.2

@@ -1,10 +1,11 @@
-// Variables
+/** @format */
 
 // Theme font and color variations
 $theme-styles: (
   classic: (
     fonts: (
       serif: (
+        "Adobe Clean Serif",
         "Lora",
         "Lucida Bright",
         "Lucidabright",
@@ -14,15 +15,16 @@ $theme-styles: (
         serif,
       ),
       sans-serif: (
+        "Adobe Clean",
         "Open Sans",
         Lato,
         sans-serif,
       ),
     ),
     colors: (
-      blue: #7076f0,
-      green: #29cf7f,
-      red: #f36763,
+      blue: #215c94,
+      green: #19857b,
+      red: #94352f,
     ),
   ),
   bold: (
@@ -68,15 +70,15 @@ $theme-styles: (
     ),
     colors: (
       blue: #0084ff,
-      green: #00cc88,
-      red: #ff3366,
+      green: #0c8,
+      red: #f36,
     ),
   ),
 );
 
 // Monospace font
-$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-  "Liberation Mono", "Courier New", monospace !default;
+$font-family-monospace: sfmono-regular, menlo, monaco, consolas, "Liberation Mono",
+  "Courier New", monospace !default;
 
 // Colors
 
