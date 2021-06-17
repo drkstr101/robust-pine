@@ -28,6 +28,7 @@ importers:
       '@watheia/base-ui.theme.sizes': registry.npmjs.org/@watheia/base-ui.theme.sizes/0.1.5_react-dom@16.14.0+react@16.14.0
       browserslist: registry.npmjs.org/browserslist/4.16.6
       classnames: registry.npmjs.org/classnames/2.3.1
+      clsx: registry.npmjs.org/clsx/1.1.1
       core-js: registry.npmjs.org/core-js/3.14.0
       eslint: registry.npmjs.org/eslint/7.27.0
       eslint-config-airbnb-typescript: registry.npmjs.org/eslint-config-airbnb-typescript/5.1.0_a8e42d02345e5df1f40eec7039c7ac33
@@ -99,6 +100,7 @@ importers:
       browserslist: ^4.16.6
       chai: 4.3.4
       classnames: 2.3.1
+      clsx: ^1.1.1
       core-js: ^3.14.0
       eslint: 7.27.0
       eslint-config-airbnb-typescript: 5.1.0
@@ -188,6 +190,16 @@ importers:
   src/theme/provider:
     specifiers: {}
   src/theme/theme-provider:
+    specifiers: {}
+  src/ui/molecules/copyright:
+    specifiers: {}
+  src/ui/organisms/section:
+    specifiers: {}
+  src/ui/organisms/section-alternate:
+    specifiers: {}
+  src/ui/views/not-found:
+    specifiers: {}
+  src/ui/views/server-error:
     specifiers: {}
   uikit/content/bit-testimonials:
     specifiers: {}

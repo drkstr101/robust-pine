@@ -3,201 +3,219 @@
 {
     "content/bit-testimonials": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "bit-testimonials.tsx",
         "rootDir": "src/content/bit-testimonials"
     },
     "content/links": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/content/links"
     },
-    "ctx/waweb/data": {
-        "scope": "",
-        "version": "",
-        "mainFile": "index.ts",
-        "rootDir": "src/ctx/waweb/data"
-    },
     "elements/button": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.tsx",
         "rootDir": "src/elements/button"
     },
     "elements/heading": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.tsx",
         "rootDir": "src/elements/heading"
     },
     "elements/icon": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.tsx",
         "rootDir": "src/elements/icon"
     },
     "elements/icon-line": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/elements/icon-line"
     },
     "elements/image": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/elements/image"
     },
     "elements/link": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/elements/link"
     },
-    "layout/ui/copyright": {
-        "scope": "",
-        "version": "",
-        "mainFile": "index.ts",
-        "rootDir": "src/layout/ui/copyright"
-    },
     "marketing/comment-carousel": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/marketing/comment-carousel"
     },
     "marketing/community-links/community-link": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/marketing/community-links/community-link"
     },
     "marketing/community-links/github-link": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/marketing/community-links/github-link"
     },
     "marketing/community-links/slack-link": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/marketing/community-links/slack-link"
     },
     "marketing/community-links/twitter-link": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/marketing/community-links/twitter-link"
     },
     "marketing/enterprise-logos": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/marketing/enterprise-logos"
     },
     "marketing/testimonial": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/marketing/testimonial"
     },
     "marketing/twitter-card": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/marketing/twitter-card"
     },
     "pages/hybrid-homepage": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/pages/hybrid-homepage"
     },
     "sections/build-together": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/sections/build-together"
     },
     "sections/carousel-section": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.tsx",
         "rootDir": "src/sections/carousel-section"
     },
     "sections/community": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/sections/community"
     },
     "sections/component-advantages": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/sections/component-advantages"
     },
     "sections/cta": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/sections/cta"
     },
     "sections/develop-components": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/sections/develop-components"
     },
     "sections/discover-components": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.tsx",
         "rootDir": "src/sections/discover-components"
     },
     "sections/enterprise-section": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/sections/enterprise-section"
     },
     "sections/hero": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.tsx",
         "rootDir": "src/sections/hero"
     },
     "sections/independent-teams": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.tsx",
         "rootDir": "src/sections/independent-teams"
     },
     "sections/reuse-components": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/sections/reuse-components"
     },
     "sections/talk-to-experts": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/sections/talk-to-experts"
     },
     "theme/brands": {
         "scope": "waweb.uikit",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "mainFile": "index.ts",
         "rootDir": "src/theme/brands"
     },
     "theme/theme-provider": {
         "scope": "waweb.uikit",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "mainFile": "index.ts",
         "rootDir": "src/theme/theme-provider"
+    },
+    "ui/molecules/copyright": {
+        "scope": "waweb.uikit",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "src/ui/molecules/copyright"
+    },
+    "ui/organisms/section": {
+        "scope": "waweb.uikit",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "src/ui/organisms/section"
+    },
+    "ui/organisms/section-alternate": {
+        "scope": "waweb.uikit",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "src/ui/organisms/section-alternate"
+    },
+    "ui/views/not-found": {
+        "scope": "waweb.uikit",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "src/ui/views/not-found"
+    },
+    "ui/views/server-error": {
+        "scope": "waweb.uikit",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "src/ui/views/server-error"
     },
     "$schema-version": "14.9.0"
 }

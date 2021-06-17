@@ -23,7 +23,7 @@ export function ThemeProvider({ colorScheme, children }: ThemeProviderProps) {
   return (
     <Theme.Provider value={{ colorScheme }}>
       <MuiThemeProvider theme={theme}>
-        {/* <CssBaseline /> */}
+        <CssBaseline />
         <Provider theme={defaultTheme} colorScheme={colorScheme}>
           {children}
         </Provider>
